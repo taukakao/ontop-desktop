@@ -12,10 +12,10 @@ modules:
   commands:
   - lpkg --unlock
 
-- name: do-nothing
+- name: use os-prober
   type: shell
   commands:
-  - echo "doing nothing"
+  - sed -i 's/#GRUB_DISABLE_OS_PROBER/GRUB_DISABLE_OS_PROBER/' /etc/default/grub
   
 - name: cleanup
   type: shell
