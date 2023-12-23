@@ -17,6 +17,7 @@ modules:
   commands:
   - mv /etc/vconsole.conf /etc/vconsole.conf.old
   - mv /etc/vconsole.conf.new /etc/vconsole.conf
+  - sed -i 's/KEYMAP=n/KEYMAP=y/' /etc/initramfs-tools/initramfs.conf
   
 - name: cleanup
   type: shell
