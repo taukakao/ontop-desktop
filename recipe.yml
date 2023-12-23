@@ -1,0 +1,25 @@
+base: ghcr.io/vanilla-os/desktop:main
+name: Vanilla Desktop Tests
+id: vanilla-desktop-tests
+labels:
+  maintainer: Tau
+args:
+  DEBIAN_FRONTEND: noninteractive
+
+modules:
+- name: initialize
+  type: shell
+  commands:
+  - lpkg --unlock
+
+- name: do-nothing
+  type: shell
+  commands:
+  - echo "doing nothing"
+  
+- name: cleanup
+  type: shell
+  commands:
+  - apt autoremove -y
+  - apt clean
+  - lpkg --lock
