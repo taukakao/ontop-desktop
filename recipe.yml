@@ -12,10 +12,11 @@ modules:
   commands:
   - lpkg --unlock
 
-- name: do-nothing
+- name: switch vconsole.conf
   type: shell
   commands:
-  - echo "doing nothing"
+  - mv /etc/vconsole.conf /etc/vconsole.conf.old
+  - mv /etc/vconsole.conf.new /etc/vconsole.conf
   
 - name: cleanup
   type: shell
