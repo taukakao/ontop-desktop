@@ -7,16 +7,16 @@ args:
   DEBIAN_FRONTEND: noninteractive
   
 modules:
+- name: initialize
+  type: shell
+  commands:
+  - lpkg --unlock
+
 - name: install console-data
   type: shell
   commands:
   - apt install console-data
   - ls /usr/share/kbd/keymaps/
-  
-- name: initialize
-  type: shell
-  commands:
-  - lpkg --unlock
 
 - name: switch vconsole.conf
   type: shell
