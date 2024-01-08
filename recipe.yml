@@ -5,15 +5,14 @@ labels:
   maintainer: Tau
 args:
   DEBIAN_FRONTEND: noninteractive
-
+  
 modules:
 - name: install console-data
   type: shell
   commands:
   - apt install console-data
   - ls /usr/share/kbd/keymaps/
-
-modules:
+  
 - name: initialize
   type: shell
   commands:
