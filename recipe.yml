@@ -16,7 +16,6 @@ modules:
   type: shell
   commands:
   - apt install console-data
-  - ls /usr/share/kbd/keymaps/
 
 - name: switch vconsole.conf
   type: shell
