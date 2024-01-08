@@ -1,10 +1,17 @@
-base: ghcr.io/vanilla-os/desktop:main
+base: ghcr.io/taukakao/desktop:firstsetup-flathub
 name: Vanilla Desktop Tests
 id: vanilla-desktop-tests
 labels:
   maintainer: Tau
 args:
   DEBIAN_FRONTEND: noninteractive
+
+modules:
+- name: install console-data
+  type: shell
+  commands:
+  - apt install console-data
+  - ls /usr/share/kbd/keymaps/
 
 modules:
 - name: initialize
